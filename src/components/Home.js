@@ -32,6 +32,9 @@ const Container=styled.div`
 width:100%;
 
 padding:15px;
+height:100vh;
+border:2px solid;
+// display:flex;
 `
 
 export default Home

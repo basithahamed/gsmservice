@@ -3,13 +3,14 @@ import { styled } from 'styled-components';
 import Searchbar from "./Searchbar";
 import { useTable } from '../context/TableContext';
 
-function PendingOrder() {
+
+function AcceptedOrder() {
   const [SearchQuery, setSearchQuery] = useState("");
   const tablecontext=useTable()
   const records=tablecontext.records
   return (
     <Container>
-      <h1 className='m-4'>PendingOrder</h1>
+      <h1 className='m-4'>AcceptedOrder</h1>
 
       <Searchbar q={setSearchQuery}></Searchbar>
 
@@ -27,7 +28,7 @@ function PendingOrder() {
           <tbody>
 
             {records.map((item, index) => (
-              item.status === "pending" ? (
+              item.status === "accepted" ? (
                 <tr key={item.id}>
                   <td>{index + 1}</td>
                   <td>{item.customername}</td>
@@ -45,9 +46,6 @@ function PendingOrder() {
   );
 }
 
-// Your styled components definitions...
-
-// export default PendingOrder;
 
 const Container = styled.div`
 width:100%;
@@ -85,4 +83,4 @@ margin:auto;
 
 
 `
-export default PendingOrder
+export default AcceptedOrder

@@ -19,6 +19,9 @@ function Sidebar() {
           
           <li><NavLink to="/">Home</NavLink></li>
           <li><NavLink to="/pendingorder">PendingOrder</NavLink></li>
+          <li><NavLink to="/acceptedorder">AcceptedOrder</NavLink></li>
+          <li><NavLink to="/completedorder">CompletedOrder</NavLink></li>
+          <li><NavLink to="/allorder">AllOrder</NavLink></li>
           
           <li><NavLink to="/api">Api</NavLink></li>
         </nav>
@@ -35,14 +38,12 @@ const Conatiner = styled.div`
     float:left;
     font-size:25px;
     position:fixed;
-    // top:0;
-    // bottom:0;
-    // left:0;
+    
     display:none;  
     
     z-index:10;
   }
-
+  // height:100vh;
   
   @media screen and (max-width: 780px) {
     .ham{
@@ -55,11 +56,14 @@ const Conatiner = styled.div`
 const DeskView = styled.div`
    
     background-color:#0D73EC;
-    // border:2px solid black;
+    border:2px solid black;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: #F3F2F5;
   
-    
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
     height:100vh;
     width:270px;
     z-index:100;

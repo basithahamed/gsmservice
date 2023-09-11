@@ -1,5 +1,6 @@
 import {initializeApp} from "firebase/app"
-// import "firebase/database"
+import { getFirestore } from "firebase/firestore";
+
 import { getAuth } from "firebase/auth";
 
 
@@ -16,6 +17,9 @@ var firebaseConfig = {
 
 
   const fireDb=initializeApp(firebaseConfig)
+  const db = getFirestore(fireDb);
+  export { db }; // Export 'db' here
+
   export const auth=getAuth()
 //   export default fireDb.database().ref();
 

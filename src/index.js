@@ -5,13 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
+import { TableProvider } from "./context/TableContext"; // Adjust the path to match your actual file structure
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
     <AuthProvider>
+      <TableProvider>
       <App />
+      </TableProvider>
     </AuthProvider>
 
     </BrowserRouter>
