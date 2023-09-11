@@ -1,22 +1,37 @@
-import React from 'react'
-import styled from "styled-components"
-import Chennai from './Chennai'
-import Header from './Header'
-import HeroBanner from './HeroBanner'
+import React, { useContext } from 'react'
+import styled from 'styled-components'
+import Searchbar from './Searchbar'
+import ShowTable from './ShowTable'
+import Sidebar from './Sidebar'
+import Graph from './Graph'
+import FourBox from './BoxComponents/FourBox'
+
+import BasicTable from './BasicTable'
+
+
+
 
 function Home() {
+
+
     return (
-        <Container>
-            <Header></Header>
-            <Chennai></Chennai>
-            <HeroBanner></HeroBanner>
+        
+        <>  
+        
+        <Container> 
+            {/* <Searchbar ></Searchbar> */}
+            <FourBox></FourBox>
+            {/* <Graph></Graph> */}
+            
         </Container>
+        </>
     )
 }
 
-const Container = styled.div`
-height:100vh;
- 
+const Container=styled.div`
+width:100%;
+
+padding:15px;
 `
 
 export default Home

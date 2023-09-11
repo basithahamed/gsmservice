@@ -1,16 +1,57 @@
-import logo from './logo.svg';
+
+
+
 import './App.css';
-import Header from "./components/Header"
-import Chennai from "./components/Chennai"
-import HeroBanner from "./components/HeroBanner"
+
+import Home from "./components/Home"
+import Sidebar from './components/Sidebar';
+
+import { Route, Routes, useLocation } from 'react-router-dom';
+import { styled } from 'styled-components';
+
+import PendingOrder from './components/PendingOrder';
+import View from './components/View';
+import Login from './components/Login';
+import { AuthProvider, } from "./context/AuthContext"
+
+import RequireAuth from './components/RequireAuth';
+
+
 function App() {
+  const location = useLocation(); // Get the current route location
+
+  // Check if the current route is the login page
+  const isLoginPage = location.pathname === '/login';
+
   return (
     <div className="App">
-        <Header></Header>
-        <Chennai></Chennai>
-        <HeroBanner></HeroBanner>
+      <AuthProvider>
+        <Container>
+          {!isLoginPage && <Sidebar />}
+          <Routes>
+            <Route path='/' element={<RequireAuth><Home /></RequireAuth>} />
+            <Route path='/pendingorder' element={<RequireAuth><PendingOrder /></RequireAuth>} />
+            <Route path='/view:id' element={<RequireAuth><View /></RequireAuth>} />
+            <Route path='/login' element={<RequireAuth><Login /></RequireAuth>} />
+          </Routes>
+        </Container>
+      </AuthProvider>
     </div>
   );
 }
 
+const Container = styled.div`
+display:flex;
+
+`
 export default App;
+
+
+
+
+
+
+
+
+
+

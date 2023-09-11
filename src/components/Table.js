@@ -1,0 +1,26 @@
+export const columns=[
+    {
+        Header:"Id",
+        accesssor:"id",
+    },
+    {
+        Header:"FirstName",
+        accesssor:"firstName"
+    },
+    {
+        Header:"LastName",
+        accesssor:"lastName"
+    },
+    {
+        Header:"Dob",
+        accesssor:"dob"
+    },
+    {
+        Header:"Country",
+        accesssor:"country"
+    },
+    {
+        Header:"Phone",
+        accesssor:"phone"
+    }
+]
